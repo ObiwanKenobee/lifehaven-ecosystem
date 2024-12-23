@@ -3,9 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function DashboardMetrics() {
   const metrics = [
     {
-      title: "Protected Species",
-      value: "5,000+",
-      change: "+12%",
+      title: "EcoImpact Score",
+      value: "85.2",
+      change: "+5.3",
       description: "from last month",
     },
     {
@@ -15,7 +15,7 @@ export function DashboardMetrics() {
       description: "from last month",
     },
     {
-      title: "Active Projects",
+      title: "RegenNodes Active",
       value: "1,429",
       change: "+8%",
       description: "from last month",
