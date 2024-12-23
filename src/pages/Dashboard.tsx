@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle, Globe, Leaf, Tree, HandShake, Coins, BookOpen, Users } from "lucide-react";
+import { AlertCircle, Globe, Leaf, Trees, Handshake, Coins, BookOpen, Users } from "lucide-react";
 import { DashboardMetrics } from "@/components/dashboard/DashboardMetrics";
 import { AlertCenter } from "@/components/dashboard/AlertCenter";
 import { BiospherePanel } from "@/components/dashboard/BiospherePanel";
@@ -21,7 +21,7 @@ export default function Dashboard() {
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <HandShake className="h-5 w-5 text-sage-500" />
+              <Handshake className="h-5 w-5 text-sage-500" />
               Ethical Nexus Hub
             </CardTitle>
           </CardHeader>
