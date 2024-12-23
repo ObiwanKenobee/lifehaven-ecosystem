@@ -1,9 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Globe, Leaf } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function BiospherePanel() {
+  const navigate = useNavigate();
+
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card 
+      className="hover:shadow-lg transition-shadow cursor-pointer"
+      onClick={() => navigate("/biosphere")}
+    >
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Globe className="h-5 w-5 text-sage-500" />

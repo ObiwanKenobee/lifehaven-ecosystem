@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
+import BiosphereAI from "./pages/BiosphereAI";
+import EcoImpact from "./pages/EcoImpact";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +19,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/biosphere" element={<BiosphereAI />} />
+          <Route path="/ecoimpact" element={<EcoImpact />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
