@@ -3,12 +3,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   AlertCircle, Globe, Leaf, Trees, Handshake, Coins, 
-  BookOpen, Users, Brain, Target, Recycle 
+  BookOpen, Users, Brain, Target, Recycle, ArrowRight 
 } from "lucide-react";
 import { DashboardMetrics } from "@/components/dashboard/DashboardMetrics";
 import { AlertCenter } from "@/components/dashboard/AlertCenter";
 import { BiospherePanel } from "@/components/dashboard/BiospherePanel";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -24,13 +25,16 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* BioSphere AI Panel with EcoImpact Index */}
         <Card 
-          className="hover:shadow-lg transition-shadow col-span-1 lg:col-span-2 cursor-pointer"
+          className="hover:shadow-lg transition-shadow col-span-1 lg:col-span-2 cursor-pointer group"
           onClick={() => navigate("/biosphere")}
         >
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Globe className="h-5 w-5 text-sage-500" />
-              BioSphere AI & EcoImpact Index
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Globe className="h-5 w-5 text-sage-500" />
+                BioSphere AI & EcoImpact Index
+              </div>
+              <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -39,16 +43,22 @@ export default function Dashboard() {
         </Card>
 
         {/* Ethical Nexus Hub */}
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="hover:shadow-lg transition-shadow group">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Handshake className="h-5 w-5 text-sage-500" />
-              Ethical Nexus Hub
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Handshake className="h-5 w-5 text-sage-500" />
+                Ethical Nexus Hub
+              </div>
+              <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">Supply Chain Transparency</p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Supply Chain Score</span>
+                <span className="text-sage-500 font-medium">92%</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Recycle className="h-4 w-4 text-sage-400" />
                 <span className="text-sm">Circular Chain Active</span>
@@ -58,16 +68,22 @@ export default function Dashboard() {
         </Card>
 
         {/* Regeneration Economy */}
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="hover:shadow-lg transition-shadow group">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Coins className="h-5 w-5 text-sage-500" />
-              Regeneration Economy
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Coins className="h-5 w-5 text-sage-500" />
+                Regeneration Economy
+              </div>
+              <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">Earth Credits & Carbon Exchange</p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Earth Credits</span>
+                <span className="text-sage-500 font-medium">2.1M</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Trees className="h-4 w-4 text-sage-400" />
                 <span className="text-sm">Carbon Offset Progress</span>
@@ -76,39 +92,51 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Civilizational Wisdom Engine */}
-        <Card className="hover:shadow-lg transition-shadow">
+        {/* Wisdom Engine */}
+        <Card className="hover:shadow-lg transition-shadow group">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-sage-500" />
-              Wisdom Engine
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-sage-500" />
+                Wisdom Engine
+              </div>
+              <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">Ancient Wisdom Simulations</p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Active Simulations</span>
+                <span className="text-sage-500 font-medium">3</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Brain className="h-4 w-4 text-sage-400" />
-                <span className="text-sm">Active Simulations: 3</span>
+                <span className="text-sm">AI-Driven Insights</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Planetary Collaboration */}
-        <Card className="hover:shadow-lg transition-shadow">
+        {/* Impact Network */}
+        <Card className="hover:shadow-lg transition-shadow group">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-sage-500" />
-              Impact Network
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Users className="h-5 w-5 text-sage-500" />
+                Impact Network
+              </div>
+              <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2">
-              <p className="text-muted-foreground">Global Initiatives & RegenNodes</p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Active RegenNodes</span>
+                <span className="text-sage-500 font-medium">1,429</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Target className="h-4 w-4 text-sage-400" />
-                <span className="text-sm">Active Projects: 1,429</span>
+                <span className="text-sm">Global Initiatives</span>
               </div>
             </div>
           </CardContent>
@@ -131,8 +159,11 @@ export default function Dashboard() {
             <Alert>
               <AlertCircle className="h-4 w-4" />
               <AlertTitle>New Quest Available</AlertTitle>
-              <AlertDescription>
-                Join the Global Reforestation Challenge - Plant trees and earn Earth Credits
+              <AlertDescription className="flex items-center justify-between">
+                <span>Join the Global Reforestation Challenge - Plant trees and earn Earth Credits</span>
+                <Button variant="outline" size="sm" className="ml-4">
+                  Join Quest
+                </Button>
               </AlertDescription>
             </Alert>
           </div>
