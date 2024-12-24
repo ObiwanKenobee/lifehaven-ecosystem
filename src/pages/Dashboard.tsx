@@ -21,9 +21,8 @@ export default function Dashboard() {
         <AlertCenter />
       </div>
 
-      {/* Main Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* BioSphere AI Panel with EcoImpact Index */}
+        {/* BioSphere AI Panel */}
         <Card 
           className="hover:shadow-lg transition-shadow col-span-1 lg:col-span-2 cursor-pointer group"
           onClick={() => navigate("/biosphere")}
@@ -67,8 +66,11 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Regeneration Economy */}
-        <Card className="hover:shadow-lg transition-shadow group">
+        {/* Regeneration Economy - Updated to be clickable */}
+        <Card 
+          className="hover:shadow-lg transition-shadow group cursor-pointer"
+          onClick={() => navigate("/regeneration")}
+        >
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">

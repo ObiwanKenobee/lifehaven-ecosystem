@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import BiosphereAI from "./pages/BiosphereAI";
 import EcoImpact from "./pages/EcoImpact";
+import RegenerationEconomy from "./pages/RegenerationEconomy";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/biosphere" element={<BiosphereAI />} />
           <Route path="/ecoimpact" element={<EcoImpact />} />
+          <Route path="/regeneration" element={<RegenerationEconomy />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
