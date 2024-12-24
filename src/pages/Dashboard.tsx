@@ -94,8 +94,11 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Wisdom Engine */}
-        <Card className="hover:shadow-lg transition-shadow group">
+        {/* Wisdom Engine - Updated to be clickable */}
+        <Card 
+          className="hover:shadow-lg transition-shadow group cursor-pointer"
+          onClick={() => navigate("/wisdom")}
+        >
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">
