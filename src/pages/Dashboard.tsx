@@ -1,12 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle, Globe, Leaf, Trees, Handshake, Coins, BookOpen, Users, Brain, Target, Recycle } from "lucide-react";
+import { 
+  AlertCircle, Globe, Leaf, Trees, Handshake, Coins, 
+  BookOpen, Users, Brain, Target, Recycle 
+} from "lucide-react";
 import { DashboardMetrics } from "@/components/dashboard/DashboardMetrics";
 import { AlertCenter } from "@/components/dashboard/AlertCenter";
 import { BiospherePanel } from "@/components/dashboard/BiospherePanel";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
   return (
     <div className="container mx-auto p-6 space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
@@ -17,7 +23,10 @@ export default function Dashboard() {
       {/* Main Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* BioSphere AI Panel with EcoImpact Index */}
-        <Card className="hover:shadow-lg transition-shadow col-span-1 lg:col-span-2">
+        <Card 
+          className="hover:shadow-lg transition-shadow col-span-1 lg:col-span-2 cursor-pointer"
+          onClick={() => navigate("/biosphere")}
+        >
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Globe className="h-5 w-5 text-sage-500" />
@@ -29,7 +38,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Ethical Nexus Hub with Circular Chain */}
+        {/* Ethical Nexus Hub */}
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -48,7 +57,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Regeneration Economy with Carbon Exchange */}
+        {/* Regeneration Economy */}
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -67,12 +76,12 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Wisdom Engine with Sandbox */}
+        {/* Civilizational Wisdom Engine */}
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-sage-500" />
-              Wisdom Sandbox
+              Wisdom Engine
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -86,7 +95,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* Planetary Collaboration with Impact Network */}
+        {/* Planetary Collaboration */}
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
