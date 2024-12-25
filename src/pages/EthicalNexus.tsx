@@ -17,8 +17,11 @@ import { CircularChainDashboard } from "@/components/ethical-nexus/CircularChain
 import { ActionableInsights } from "@/components/ethical-nexus/ActionableInsights";
 import { CertificationHub } from "@/components/ethical-nexus/CertificationHub";
 import { AnalyticsPanel } from "@/components/ethical-nexus/AnalyticsPanel";
+import { SupplierManagement } from "@/components/ethical-nexus/SupplierManagement";
 
 export default function EthicalNexus() {
+  // ... keep existing code (Hero Section)
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -133,6 +136,9 @@ export default function EthicalNexus() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Supplier Management */}
+        <SupplierManagement />
 
         {/* Supply Chain Score */}
         <SupplyChainScore />
