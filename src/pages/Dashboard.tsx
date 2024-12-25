@@ -42,7 +42,10 @@ export default function Dashboard() {
         </Card>
 
         {/* Ethical Nexus Hub */}
-        <Card className="hover:shadow-lg transition-shadow group">
+        <Card 
+          className="hover:shadow-lg transition-shadow group cursor-pointer"
+          onClick={() => navigate("/ethical-nexus")}
+        >
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">

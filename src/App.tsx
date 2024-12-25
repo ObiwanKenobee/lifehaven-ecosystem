@@ -10,6 +10,7 @@ import EcoImpact from "./pages/EcoImpact";
 import RegenerationEconomy from "./pages/RegenerationEconomy";
 import WisdomEngine from "./pages/WisdomEngine";
 import ImpactNetwork from "./pages/ImpactNetwork";
+import EthicalNexus from "./pages/EthicalNexus";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,7 @@ const App = () => (
           <Route path="/regeneration" element={<RegenerationEconomy />} />
           <Route path="/wisdom" element={<WisdomEngine />} />
           <Route path="/impact" element={<ImpactNetwork />} />
-          {/* Redirect unknown routes to dashboard */}
+          <Route path="/ethical-nexus" element={<EthicalNexus />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </BrowserRouter>
