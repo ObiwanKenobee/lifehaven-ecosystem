@@ -3,11 +3,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { 
   AlertCircle, Globe, Leaf, Trees, Handshake, Coins, 
-  BookOpen, Users, Brain, Target, Recycle, ArrowRight 
+  BookOpen, Users, Brain, Target, Recycle, ArrowRight,
+  Building
 } from "lucide-react";
 import { DashboardMetrics } from "@/components/dashboard/DashboardMetrics";
 import { AlertCenter } from "@/components/dashboard/AlertCenter";
 import { BiospherePanel } from "@/components/dashboard/BiospherePanel";
+import { SupplierManagement } from "@/components/dashboard/SupplierManagement";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -20,6 +22,19 @@ export default function Dashboard() {
         <h1 className="text-3xl font-bold text-sage-800">LifeSphere Dashboard</h1>
         <AlertCenter />
       </div>
+
+      {/* Supplier Management Section */}
+      <Card className="hover:shadow-lg transition-shadow">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Building className="h-5 w-5 text-sage-500" />
+            Supplier Management
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <SupplierManagement />
+        </CardContent>
+      </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* BioSphere AI Panel */}
