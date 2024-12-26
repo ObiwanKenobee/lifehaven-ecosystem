@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, CheckCircle, Edit, Trash, Plus } from "lucide-react";
+import { AlertCircle, CheckCircle, Edit, Trash, Plus, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export function SupplierManagement() {
