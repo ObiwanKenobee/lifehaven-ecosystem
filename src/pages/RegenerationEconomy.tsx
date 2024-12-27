@@ -5,8 +5,13 @@ import { CarbonOffsetTracker } from "@/components/regeneration/CarbonOffsetTrack
 import { CircularCommerce } from "@/components/regeneration/CircularCommerce";
 import { ImpactMap } from "@/components/regeneration/ImpactMap";
 import { Leaf, Globe, Recycle, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function RegenerationEconomy() {
+  const navigate = useNavigate();
+
+  // ... keep existing code (metrics and other content)
+
   return (
     <div className="container mx-auto p-6 space-y-8 animate-fade-in">
       {/* Hero Banner */}
@@ -82,10 +87,19 @@ export default function RegenerationEconomy() {
 
       {/* Call to Action */}
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
-        <Button size="lg" className="w-full md:w-auto">
+        <Button 
+          size="lg" 
+          className="w-full md:w-auto"
+          onClick={() => navigate("/earth-credits")}
+        >
           Start Earning Earth Credits
         </Button>
-        <Button size="lg" variant="outline" className="w-full md:w-auto">
+        <Button 
+          size="lg" 
+          variant="outline" 
+          className="w-full md:w-auto"
+          onClick={() => navigate("/carbon-offset-projects")}
+        >
           Support a Carbon Offset Project
         </Button>
       </div>
