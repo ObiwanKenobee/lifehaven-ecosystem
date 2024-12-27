@@ -127,9 +127,11 @@ export function SupplierManagement() {
             <div className="py-6">
               <AddSupplierForm onClose={() => {
                 const sheet = document.querySelector('[data-state="open"]');
-                if (sheet) {
-                  const closeButton = sheet.querySelector('button[data-state]');
-                  closeButton?.click();
+                if (sheet instanceof HTMLElement) {
+                  const closeButton = sheet.querySelector('[data-state]');
+                  if (closeButton instanceof HTMLElement) {
+                    closeButton.click();
+                  }
                 }
               }} />
             </div>

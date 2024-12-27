@@ -46,17 +46,26 @@ export function AddSupplierForm({ onClose }: { onClose: () => void }) {
   const addSupplierMutation = useMutation({
     mutationFn: async (data: SupplierFormData) => {
       console.log('Adding new supplier:', data);
+      // Convert location to coordinates (using a simple mapping for now)
+      const coordinatesMap: Record<string, [number, number]> = {
+        'north-america': [40.7128, -74.0060], // New York coordinates as default for North America
+        'europe': [51.5074, -0.1278], // London coordinates as default for Europe
+        'asia': [35.6762, 139.6503], // Tokyo coordinates as default for Asia
+        'other': [0, 0] // Default coordinates for other
+      };
+      
+      const coordinates = coordinatesMap[data.location] || [0, 0];
+      
       const { error } = await supabase
         .from('suppliers')
-        .insert([
-          {
-            name: data.name,
-            location: data.location,
-            risk_level: data.riskLevel,
-            compliance_rate: data.complianceRate,
-            sustainability_goals: data.sustainabilityInitiatives,
-          }
-        ]);
+        .insert({
+          name: data.name,
+          location: data.location,
+          coordinates: `(${coordinates[0]},${coordinates[1]})`, // Format as point type
+          risk_level: data.riskLevel,
+          compliance_rate: data.complianceRate,
+          sustainability_goals: data.sustainabilityInitiatives,
+        });
       
       if (error) throw error;
     },
