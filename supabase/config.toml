@@ -1,1 +1,25 @@
 project_id = "nwnrdldsrbgcibtkjuyf"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+
+[db]
+port = 54322
+
+[studio]
+enabled = true
+port = 54323
+
+[[functions]]
+name = "earth-credits"
+verify_jwt = true
+
+[[functions]]
+name = "carbon-offsets"
+verify_jwt = true
+
+[[functions]]
+name = "suppliers"
+verify_jwt = true
