@@ -28,35 +28,46 @@ export function SupplierManagement() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  // Fetch suppliers
-  const { data: suppliers, isLoading } = useQuery({
+  // Fetch suppliers with improved error handling
+  const { data: suppliers, isLoading, error } = useQuery({
     queryKey: ['suppliers'],
     queryFn: async () => {
       console.log('Fetching suppliers...');
-      const { data, error } = await supabase
-        .from('suppliers')
-        .select('*')
-        .order('name')
-        .limit(5);
-      
-      if (error) {
-        console.error('Error fetching suppliers:', error);
-        throw error;
+      try {
+        const { data, error } = await supabase
+          .from('suppliers')
+          .select('*')
+          .order('name')
+          .limit(5);
+        
+        if (error) {
+          console.error('Supabase error fetching suppliers:', error);
+          throw error;
+        }
+        
+        console.log('Suppliers fetched successfully:', data);
+        return data;
+      } catch (err) {
+        console.error('Error in suppliers query:', err);
+        throw err;
       }
-      console.log('Suppliers fetched:', data);
-      return data;
     },
+    retry: 1,
   });
 
   // Delete supplier mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
+      console.log('Deleting supplier with ID:', id);
       const { error } = await supabase
         .from('suppliers')
         .delete()
         .eq('id', id);
       
-      if (error) throw error;
+      if (error) {
+        console.error('Error deleting supplier:', error);
+        throw error;
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['suppliers'] });
@@ -66,7 +77,7 @@ export function SupplierManagement() {
       });
     },
     onError: (error) => {
-      console.error('Error deleting supplier:', error);
+      console.error('Error in delete mutation:', error);
       toast({
         title: "Error",
         description: "Failed to delete supplier. Please try again.",
@@ -103,8 +114,16 @@ export function SupplierManagement() {
     navigate('/ethical-nexus');
   };
 
+  if (error) {
+    return (
+      <div className="p-4 text-red-500">
+        Error loading suppliers. Please try again later.
+      </div>
+    );
+  }
+
   if (isLoading) {
-    return <div>Loading suppliers...</div>;
+    return <div className="p-4">Loading suppliers...</div>;
   }
 
   return (

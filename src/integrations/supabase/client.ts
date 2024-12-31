@@ -10,3 +10,6 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     detectSessionInUrl: true
   }
 });
+
+// Add console log to help with debugging
+console.log('Supabase client initialized with URL:', supabaseUrl);
