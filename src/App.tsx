@@ -10,6 +10,7 @@ import WisdomEngine from "@/pages/WisdomEngine";
 import ImpactNetwork from "@/pages/ImpactNetwork";
 import EarthCredits from "@/pages/EarthCredits";
 import CarbonOffsetProjects from "@/pages/CarbonOffsetProjects";
+import JoinMovement from "@/pages/JoinMovement";
 
 import "./App.css";
 
@@ -29,6 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/join" element={<JoinMovement />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/eco-impact" element={<EcoImpact />} />
           <Route path="/biosphere-ai" element={<BiosphereAI />} />
