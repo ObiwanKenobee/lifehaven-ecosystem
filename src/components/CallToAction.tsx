@@ -25,7 +25,10 @@ export const CallToAction = () => {
             >
               Get Started
             </button>
-            <button className="px-8 py-4 bg-white text-sage-700 rounded-lg font-medium border border-sage-200 hover:bg-sage-100 transition-colors duration-300">
+            <button 
+              onClick={() => navigate("/eco-impact")}
+              className="px-8 py-4 bg-white text-sage-700 rounded-lg font-medium border border-sage-200 hover:bg-sage-100 transition-colors duration-300"
+            >
               Learn More
             </button>
           </div>

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Globe, Users, Leaf } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
   const impactMetrics = [
     { icon: Globe, value: "2.5M", label: "Earth Credits Generated" },
     { icon: Users, value: "150K", label: "Active Contributors" },
@@ -55,7 +57,10 @@ export const Hero = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <button className="px-8 py-4 bg-sage-500 text-white rounded-lg font-medium hover:bg-sage-600 transition-colors duration-300 flex items-center justify-center gap-2">
+            <button 
+              onClick={() => navigate("/join")}
+              className="px-8 py-4 bg-sage-500 text-white rounded-lg font-medium hover:bg-sage-600 transition-colors duration-300 flex items-center justify-center gap-2"
+            >
               <Globe className="w-5 h-5" />
               Join the Movement
             </button>
