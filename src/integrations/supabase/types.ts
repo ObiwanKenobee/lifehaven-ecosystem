@@ -121,6 +121,45 @@ export type Database = {
           },
         ]
       }
+      carbon_metrics: {
+        Row: {
+          created_at: string | null
+          current_progress: number | null
+          id: string
+          notes: string | null
+          reporting_period: string
+          scope1_value: number
+          scope2_value: number
+          scope3_value: number
+          target_reduction: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          current_progress?: number | null
+          id?: string
+          notes?: string | null
+          reporting_period: string
+          scope1_value: number
+          scope2_value: number
+          scope3_value: number
+          target_reduction?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          current_progress?: number | null
+          id?: string
+          notes?: string | null
+          reporting_period?: string
+          scope1_value?: number
+          scope2_value?: number
+          scope3_value?: number
+          target_reduction?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       compliance_checks: {
         Row: {
           created_at: string | null
@@ -255,6 +294,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      config: {
+        Row: {
+          created_at: string
+          key: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          created_at?: string
+          key: string
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          created_at?: string
+          key?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
       }
       conservation_programs: {
         Row: {
